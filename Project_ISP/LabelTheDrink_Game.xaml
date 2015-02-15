@@ -4,10 +4,21 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="LabelTheDrink_Game">
+      d:DesignHeight="344" d:DesignWidth="529"
+	Title="LabelTheDrink_Game" Width="478" Height="311">
 
     <Grid>
-        
+        <TextBox Height="Auto" HorizontalAlignment="Right" Margin="0,77,32,0" Name="textBox1" VerticalAlignment="Top" Width="75" FontSize="14" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="384,48,0,0" Name="textBlock1" Text="Decaf" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock2" Text="I would like a..." VerticalAlignment="Top" Width="85" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,32,0,0" Name="OrderName" Text="Order name" VerticalAlignment="Top" Width="336" FontSize="16" FontWeight="Bold" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,276,0,0" Name="textBlock3" Text="Score:      |" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="50,276,0,0" Name="CorrectScoreBox" Text="0" VerticalAlignment="Top" Foreground="Lime" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="218,276,0,0" Name="textBlock5" Text="Time Left:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="103,276,0,0" Name="textBlock6" Text="Orders Left:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="170,276,0,0" Name="OrdersLeftBox" Text="0" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="275,276,0,0" Name="textBlock4" Text="0:00" VerticalAlignment="Top" />
+        <Button Content="Done" Height="23" HorizontalAlignment="Left" Margin="391,276,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <TextBlock Foreground="Red" Height="23" HorizontalAlignment="Left" Margin="73,276,0,0" Name="textBlock7" Text="0" VerticalAlignment="Top" />
     </Grid>
 </Page>

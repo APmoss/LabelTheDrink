@@ -19,5 +19,9 @@ namespace Project_ISP {
 		public LabelTheDrink() {
 			InitializeComponent();
 		}
+
+		private void StartGame(object sender, RoutedEventArgs e) {
+			this.Content = new LabelTheDrink_Game();
+		}
 	}
 }

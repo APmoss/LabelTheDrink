@@ -71,6 +71,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Drink.cs" />
+    <Compile Include="DrinkList.cs" />
     <Compile Include="LabelTheDrink.xaml.cs">
       <DependentUpon>LabelTheDrink.xaml</DependentUpon>
     </Compile>

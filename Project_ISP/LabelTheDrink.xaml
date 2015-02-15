@@ -4,6 +4,6 @@
         Title="LabelTheDrink" Height="350" Width="500" ResizeMode="CanMinimize">
     <Grid>
         <Button Content="Start" Margin="0,0,12,12" Height="23" VerticalAlignment="Bottom" Click="StartGame" Name="button1" HorizontalAlignment="Right" Width="75" />
-        <TextBlock Margin="12,12,12,0" Name="textBlock1" Text="Correctly fill in the boxes on the cup from what the customer asks for. Complete as many orders as you can before time runs out!" TextWrapping="WrapWithOverflow" TextAlignment="Center" Height="72" VerticalAlignment="Top" />
+        <TextBlock Margin="12,12,12,0" Name="textBlock1" Text="Correctly fill in the boxes on the cup from what the customer asks for. Complete as many orders as you can correctly to get the highest score!" TextWrapping="WrapWithOverflow" TextAlignment="Center" Height="72" VerticalAlignment="Top" />
     </Grid>
 </Window>

@@ -24,7 +24,8 @@ namespace Project_ISP {
 		public List<string> Syrups = new List<string>();
 		public bool CanMilk = true;
 		public string MilkBox = string.Empty;
-		public List<string> Customs = new List<string>();
+		public string CustomBox = string.Empty;
+		public int Sugars = 0;
 		public string DrinkBox = string.Empty;
 		public int popularity = 0;
 	}

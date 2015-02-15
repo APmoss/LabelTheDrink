@@ -11,14 +11,14 @@
         <TextBox Height="Auto" HorizontalAlignment="Right" Margin="0,22,12,0" Name="DecafBox" VerticalAlignment="Top" Width="67" FontSize="14" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="416,5,0,0" Name="textBlock1" Text="Decaf" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock2" Text="I would like a..." VerticalAlignment="Top" Width="85" />
-        <TextBlock Height="74" HorizontalAlignment="Left" Margin="12,32,0,0" Name="OrderName" Text="Order name" VerticalAlignment="Top" Width="336" FontSize="16" FontWeight="Bold" TextWrapping="WrapWithOverflow" />
+        <TextBlock Height="74" HorizontalAlignment="Left" Margin="12,32,0,0" Name="OrderName" Text="Order name" VerticalAlignment="Top" Width="336" FontSize="12" FontWeight="Bold" TextWrapping="WrapWithOverflow" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,276,0,0" Name="textBlock3" Text="Score:      |" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="50,276,0,0" Name="CorrectScoreBox" Text="0" VerticalAlignment="Top" Foreground="Lime" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="218,276,0,0" Name="textBlock5" Text="Time Left:" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="103,276,0,0" Name="textBlock6" Text="Orders Left:" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="170,276,0,0" Name="OrdersLeftBox" Text="0" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="275,276,0,0" Name="textBlock4" Text="0:00" VerticalAlignment="Top" />
-        <Button Content="Done" Height="23" HorizontalAlignment="Left" Margin="391,276,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="275,276,0,0" Name="TimeLeftBox" Text="1:00" VerticalAlignment="Top" />
+        <Button Content="Done" Height="23" HorizontalAlignment="Left" Margin="391,276,0,0" Name="DoneButton" VerticalAlignment="Top" Width="75" Click="Done" />
         <TextBlock Foreground="Red" Height="23" HorizontalAlignment="Left" Margin="73,276,0,0" Name="textBlock7" Text="0" VerticalAlignment="Top" />
         <Expander Header="Cheat Sheet" Height="158" HorizontalAlignment="Left" Margin="11,112,0,0" Name="expander1" VerticalAlignment="Top" Width="240">
             <Grid>

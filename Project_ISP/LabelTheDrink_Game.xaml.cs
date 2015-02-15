@@ -17,8 +17,19 @@ namespace Project_ISP {
 	/// Interaction logic for LabelTheDrink_Game.xaml
 	/// </summary>
 	public partial class LabelTheDrink_Game : Page {
+		Drink drink;
+
 		public LabelTheDrink_Game() {
 			InitializeComponent();
+		}
+
+		private void Initialize(object sender, RoutedEventArgs e) {
+			drink = DrinkList.GetRandomDrink();
+
+			OrderName.Text = drink.Name;
+			foreach (var custom in drink.Customs) {
+				OrderName.Text += ", one pump " + DrinkList.ToFullName(custom);
+			}
 		}
 	}
 }

@@ -7,23 +7,24 @@ namespace Project_ISP {
 	}
 
 	class Drink {
-		public Drink(string name, DrinkType drinkType, bool canDecaf, bool canMilk, string drinkBox, int popularity) {
+		public Drink(string name, DrinkType drinkPossibilities, bool canDecaf, bool canMilk, string drinkBox, int popularity) {
 			this.Name = name;
-			this.DrinkType = drinkType;
+			this.DrinkPossibilities = drinkPossibilities;
 			this.CanDecaf = canDecaf;
 			this.CanMilk = canMilk;
 			this.DrinkBox = drinkBox;
 		}
 
 		public string Name = string.Empty;
-		public DrinkType DrinkType = 0;
+		public DrinkType CurrentDrinkType = 0;
+		public DrinkType DrinkPossibilities = 0;
 		public bool CanDecaf = true;
 		public string DecafBox = string.Empty;
 		public short Shots = 0;
-		public List<string> Syrups = List<string>();
+		public List<string> Syrups = new List<string>();
 		public bool CanMilk = true;
 		public string MilkBox = string.Empty;
-		public string Custom = string.Empty;
+		public List<string> Customs = new List<string>();
 		public string DrinkBox = string.Empty;
 		public int popularity = 0;
 	}

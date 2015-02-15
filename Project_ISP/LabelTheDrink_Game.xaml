@@ -7,11 +7,11 @@
       d:DesignHeight="344" d:DesignWidth="529"
 	Title="LabelTheDrink_Game" Width="478" Height="311">
 
-    <Grid>
-        <TextBox Height="Auto" HorizontalAlignment="Right" Margin="0,77,32,0" Name="textBox1" VerticalAlignment="Top" Width="75" FontSize="14" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="384,48,0,0" Name="textBlock1" Text="Decaf" VerticalAlignment="Top" />
+    <Grid Loaded="Initialize">
+        <TextBox Height="Auto" HorizontalAlignment="Right" Margin="0,22,12,0" Name="DecafBox" VerticalAlignment="Top" Width="67" FontSize="14" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="416,5,0,0" Name="textBlock1" Text="Decaf" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock2" Text="I would like a..." VerticalAlignment="Top" Width="85" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,32,0,0" Name="OrderName" Text="Order name" VerticalAlignment="Top" Width="336" FontSize="16" FontWeight="Bold" />
+        <TextBlock Height="74" HorizontalAlignment="Left" Margin="12,32,0,0" Name="OrderName" Text="Order name" VerticalAlignment="Top" Width="336" FontSize="16" FontWeight="Bold" TextWrapping="WrapWithOverflow" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,276,0,0" Name="textBlock3" Text="Score:      |" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="50,276,0,0" Name="CorrectScoreBox" Text="0" VerticalAlignment="Top" Foreground="Lime" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="218,276,0,0" Name="textBlock5" Text="Time Left:" VerticalAlignment="Top" />
@@ -20,5 +20,62 @@
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="275,276,0,0" Name="textBlock4" Text="0:00" VerticalAlignment="Top" />
         <Button Content="Done" Height="23" HorizontalAlignment="Left" Margin="391,276,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
         <TextBlock Foreground="Red" Height="23" HorizontalAlignment="Left" Margin="73,276,0,0" Name="textBlock7" Text="0" VerticalAlignment="Top" />
+        <Expander Header="Cheat Sheet" Height="158" HorizontalAlignment="Left" Margin="11,112,0,0" Name="expander1" VerticalAlignment="Top" Width="240">
+            <Grid>
+                <ListBox Margin="6" Name="listBox1" FontSize="10">
+                    <ListBoxItem Content="Caffeination:" Foreground="Brown" />
+                    <ListBoxItem Content="1/2 - Half Caffeine" />
+                    <ListBoxItem Content="X - Decaf" />
+                    <ListBoxItem Content="Syrups" Foreground="Lime" />
+                    <ListBoxItem Content="V - Vanilla" />
+                    <ListBoxItem Content="M - Mocha" />
+                    <ListBoxItem Content="WM - White Mocha" />
+                    <ListBoxItem Content="H - Hazelnut" />
+                    <ListBoxItem Content="CD - Cinnamon Dulce" />
+                    <ListBoxItem Content="TN - Toffee Nut" />
+                    <ListBoxItem Content="P - Peppermint" />
+                    <ListBoxItem Content="R - Raspberry" />
+                    <ListBoxItem Content="CL - Classic" />
+                    <ListBoxItem Content="CR - Caramel" />
+                    <ListBoxItem Content="CH - Chai" />
+                    <ListBoxItem />
+                    <ListBoxItem Content="SFV - Sugar Free Vanilla" />
+                    <ListBoxItem Content="SFM - Sugar Free Mocha" />
+                    <ListBoxItem Content="SFH - Sugar Free Hazelnut" />
+                    <ListBoxItem Content="SFCD - Sugar Free Cinnamon Dulce" />
+                    <ListBoxItem Content="SFC - Sugar Free Caramel" />
+                    <ListBoxItem Content="Milks:" Foreground="Blue" />
+                    <ListBoxItem Content="WH - Whole Milk" />
+                    <ListBoxItem Content="N - Nonfat Milk" />
+                    <ListBoxItem Content="% - 2% Milk" />
+                    <ListBoxItem Content="1/2 - Half and Half" />
+                    <ListBoxItem Content="HC - Heavy Cream" />
+                    <ListBoxItem Content="S - Soy Milk" />
+                    <ListBoxItem Content="Customs:" Foreground="Red" />
+                    <ListBoxItem Content="WH - Whip Cream" />
+                    <ListBoxItem Content="&quot;-WH-&quot; - No Whip Crean" />
+                    <ListBoxItem Content="XWC - Extra Whip Cream" />
+                    <ListBoxItem Content="XH - Extra Hot" />
+                    <ListBoxItem Content="&quot;-F-&quot; - No Foam" />
+                    <ListBoxItem Content="130 - 130 Degrees" />
+                    <ListBoxItem Content="XCR - Extra Caramel" />
+                    <ListBoxItem Content="LTICE - Light Ice" />
+                    <ListBoxItem Content="XICE - Extra Ice" />
+                    <ListBoxItem Content="W - Wet" />
+                    <ListBoxItem Content="D - Dry" />
+                    <ListBoxItem Content="X2 - Double Blended" />
+                </ListBox>
+            </Grid>
+        </Expander>
+        <TextBox FontSize="14" Height="Auto" HorizontalAlignment="Right" Margin="0,62,12,0" Name="ShotsBox" VerticalAlignment="Top" Width="67" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="417,45,0,0" Name="textBlock8" Text="Shots" VerticalAlignment="Top" />
+        <TextBox FontSize="14" Height="Auto" HorizontalAlignment="Right" Margin="0,102,12,0" Name="SyrupBox" VerticalAlignment="Top" Width="67" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="417,85,0,0" Name="textBlock9" Text="Syrup" VerticalAlignment="Top" />
+        <TextBox FontSize="14" Height="Auto" HorizontalAlignment="Right" Margin="0,142,12,0" Name="MilkBox" VerticalAlignment="Top" Width="67" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="420,125,0,0" Name="textBlock10" Text="Milk" VerticalAlignment="Top" />
+        <TextBox FontSize="14" Height="Auto" HorizontalAlignment="Right" Margin="0,182,12,0" Name="CustomBox" VerticalAlignment="Top" Width="67" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="412,165,0,0" Name="textBlock11" Text="Custom" VerticalAlignment="Top" />
+        <TextBox FontSize="14" Height="Auto" HorizontalAlignment="Right" Margin="0,222,12,0" Name="DrinkBox" VerticalAlignment="Top" Width="67" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="416,205,0,0" Name="textBlock12" Text="Drink" VerticalAlignment="Top" />
     </Grid>
 </Page>

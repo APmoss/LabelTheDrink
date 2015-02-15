@@ -20,8 +20,16 @@ namespace Project_ISP {
 			InitializeComponent();
 		}
 
-		private void StartGame(object sender, RoutedEventArgs e) {
-			this.Content = new LabelTheDrink_Game();
+		private void Start5(object sender, RoutedEventArgs e) {
+			this.Content = new LabelTheDrink_Game(this, 4, 0, 0);
+		}
+
+		private void Start10(object sender, RoutedEventArgs e) {
+			this.Content = new LabelTheDrink_Game(this, 9, 0, 0);
+		}
+
+		private void Start20(object sender, RoutedEventArgs e) {
+			this.Content = new LabelTheDrink_Game(this, 19, 0, 0);
 		}
 	}
 }

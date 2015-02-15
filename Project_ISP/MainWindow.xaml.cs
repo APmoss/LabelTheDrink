@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Xml.Serialization;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace Project_ISP {
 	/// <summary>
@@ -60,6 +61,7 @@ namespace Project_ISP {
 			switch ((string)item.Content) {
 				case "Label the Drink":
 					Description.Text = "Enter the correct labels on the cup to gather the most points.";
+					Picture.Source = new BitmapImage(new System.Uri("/Project_ISP;component/cup.jpg", System.UriKind.Relative));
 					break;
 			}
 		}

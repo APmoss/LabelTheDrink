@@ -18,22 +18,45 @@ namespace Project_ISP {
 	/// Interaction logic for LabelTheDrink_Game.xaml
 	/// </summary>
 	public partial class LabelTheDrink_Game : Page {
+		Window parentWindow;
+		int ordersLeft, scoreCorrect, scoreIncorrect;
+
 		Drink drink;
 		DispatcherTimer t = new DispatcherTimer();
 		TimeSpan timeLeft = TimeSpan.FromMinutes(1);
 
-		public LabelTheDrink_Game() {
+		public LabelTheDrink_Game(Window parentWindow, int ordersLeft, int scoreCorrect, int scoreIncorrect) {
 			InitializeComponent();
+
+			this.parentWindow = parentWindow;
+
+			this.ordersLeft = ordersLeft;
+			this.scoreCorrect = scoreCorrect;
+			this.scoreIncorrect = scoreIncorrect;
 		}
 
 		private void Initialize(object sender, RoutedEventArgs e) {
+			t.Stop();
 			t = new DispatcherTimer();
 			t.Interval = TimeSpan.FromSeconds(1);
 			t.Tick += (se, ev) => {
-				timeLeft -= TimeSpan.FromSeconds(1);
+				if (timeLeft.TotalSeconds > 0) {
+					timeLeft -= TimeSpan.FromSeconds(1);
+				}
+				else {
+					CheckLabels();
+					DoneButton.IsEnabled = false;
+					NextButton.IsEnabled = true;
+					t.Stop();
+				}
 				TimeLeftBox.Text = timeLeft.Minutes + ":" + timeLeft.Seconds;
 			};
 			t.Start();
+
+			OrdersLeftBox.Text = ordersLeft.ToString();
+			CorrectScoreBox.Text = scoreCorrect.ToString();
+			IncorrectScoreBox.Text = scoreIncorrect.ToString();
+
 			drink = DrinkList.GetRandomDrink();
 
 			SetOrderNameText();
@@ -95,8 +118,115 @@ namespace Project_ISP {
 			OrderName.Text = t;
 		}
 
+		protected void CheckLabels() {
+			bool perfect = true;
+
+			if (DecafBox.Text.Trim().ToUpper() != drink.DecafBox) {
+				DecafCorrect.Foreground = Brushes.Red;
+				DecafCorrect.Text = drink.DecafBox;
+
+				perfect = false;
+			}
+			else {
+				DecafCorrect.Foreground = Brushes.Green;
+				DecafCorrect.Text = "Correct";
+			}
+
+			if (drink.Shots > 0 && ShotsBox.Text.Trim() != drink.Shots.ToString()) {
+				ShotsCorrect.Foreground = Brushes.Red;
+				ShotsCorrect.Text = drink.Shots.ToString();
+
+				perfect = false;
+			}
+			else {
+				ShotsCorrect.Foreground = Brushes.Green;
+				ShotsCorrect.Text = "Correct";
+			}
+
+			SyrupCorrect.Text = string.Empty;
+			var syrupInputs = SyrupBox.Text.Trim().ToUpper().Split(' ');
+			foreach (var syrup in drink.Syrups) {
+				if (!syrupInputs.Contains(syrup)) {
+					SyrupCorrect.Foreground = Brushes.Red;
+					SyrupCorrect.Text += syrup + " ";
+
+					perfect = false;
+				}
+			}
+			if (SyrupCorrect.Text == string.Empty) {
+				SyrupCorrect.Foreground = Brushes.Green;
+				SyrupCorrect.Text = "Correct";
+			}
+
+			if (MilkBox.Text.Trim().ToUpper() != drink.MilkBox) {
+				MilkCorrect.Foreground = Brushes.Red;
+				MilkCorrect.Text = drink.MilkBox;
+
+				perfect = false;
+			}
+			else {
+				MilkCorrect.Foreground = Brushes.Green;
+				MilkCorrect.Text = "Correct";
+			}
+
+			if (drink.Sugars > 1) {
+				if (CustomBox.Text.Trim().ToUpper() != drink.Sugars + drink.CustomBox) {
+					CustomCorrect.Foreground = Brushes.Red;
+					CustomCorrect.Text = drink.Sugars + drink.CustomBox;
+
+					perfect = false;
+				}
+				else {
+					CustomCorrect.Foreground = Brushes.Green;
+					CustomCorrect.Text = "Correct";
+				}
+			}
+			else if (CustomBox.Text.Trim().ToUpper() != drink.CustomBox) {
+				CustomCorrect.Foreground = Brushes.Red;
+				CustomCorrect.Text = drink.CustomBox;
+
+				perfect = false;
+			}
+			else {
+				CustomCorrect.Foreground = Brushes.Green;
+				CustomCorrect.Text = "Correct";
+			}
+
+			if (DrinkBox.Text.Trim().ToUpper() != drink.DrinkBox) {
+				DrinkCorrect.Foreground = Brushes.Red;
+				DrinkCorrect.Text = drink.DrinkBox;
+
+				perfect = false;
+			}
+			else {
+				DrinkCorrect.Foreground = Brushes.Green;
+				DrinkCorrect.Text = "Correct";
+			}
+
+			if (perfect) {
+				scoreCorrect++;
+				CorrectScoreBox.Text = scoreCorrect.ToString();
+			}
+			else {
+				scoreIncorrect++;
+				IncorrectScoreBox.Text = scoreIncorrect.ToString();
+			}
+		}
+
 		private void Done(object sender, RoutedEventArgs e) {
-			Initialize(null, null);
+			t.Stop();
+			CheckLabels();
+			DoneButton.IsEnabled = false;
+			NextButton.IsEnabled = true;
+		}
+
+		private void Next(object sender, RoutedEventArgs e) {
+			if (ordersLeft != 0) {
+				parentWindow.Content = new LabelTheDrink_Game(parentWindow, ordersLeft - 1, scoreCorrect, scoreIncorrect);
+			}
+			else {
+				parentWindow.Content = new LabelTheDrink_End(parentWindow, scoreCorrect, scoreIncorrect);
+			}
 		}
 	}
 }

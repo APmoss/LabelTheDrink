@@ -1,9 +1,12 @@
 ﻿<Window x:Class="Project_ISP.LabelTheDrink"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="LabelTheDrink" Height="350" Width="500" ResizeMode="CanMinimize">
+        Title="Label The Drink" Height="350" Width="500" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Start" Margin="0,0,12,12" Height="23" VerticalAlignment="Bottom" Click="StartGame" Name="button1" HorizontalAlignment="Right" Width="75" />
-        <TextBlock Margin="12,12,12,0" Name="textBlock1" Text="Correctly fill in the boxes on the cup from what the customer asks for. Complete as many orders as you can correctly to get the highest score!" TextWrapping="WrapWithOverflow" TextAlignment="Center" Height="72" VerticalAlignment="Top" />
+        <Button Content="Start - 5 orders" Margin="0,0,12,70" Height="23" VerticalAlignment="Bottom" Click="Start5" Name="button1" HorizontalAlignment="Right" Width="125" />
+        <TextBlock Margin="12,12,12,0" Name="textBlock1" Text="Correctly fill in the boxes on the cup from what the customer asks for. Complete as many orders as you can correctly to get the highest score!" TextWrapping="WrapWithOverflow" TextAlignment="Center" Height="44" VerticalAlignment="Top" />
+        <Button Content="Start - 10 orders" Height="23" HorizontalAlignment="Right" Margin="0,0,12,41" Name="button2" VerticalAlignment="Bottom" Width="125" Click="Start10" />
+        <Button Content="Start - 20 orders" Height="23" HorizontalAlignment="Right" Margin="0,0,12,12" Name="button3" VerticalAlignment="Bottom" Width="125" Click="Start20" />
+        <Image Height="237" HorizontalAlignment="Left" Margin="12,62,0,0" Name="image1" Stretch="UniformToFill" VerticalAlignment="Top" Width="323" Source="/Project_ISP;component/cup.jpg" />
     </Grid>
 </Window>
